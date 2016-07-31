@@ -1,0 +1,34 @@
+{
+  "name": "based",
+  "version": "0.0.1",
+  "description": "Base 32 encoding",
+  "main": "index.js",
+  "directories": {
+    "compile": "eslint . && babel -d lib/ src/",
+    "hooks": "chmod +x hooks/*; cd .git/hooks && ln -sf ../../hooks/* . && exit 0",
+    "prepublish": "npm run compile",
+    "start": "npm run compile",
+    "test": "npm start && mocha --recursive --compilers js:babel-core/register"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpgmartin/based.git"
+  },
+  "author": "Tom Martin <tom@tpgmartin.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tpgmartin/based/issues"
+  },
+  "homepage": "https://github.com/tpgmartin/based#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.2.0",
+    "mocha": "^2.5.3"
+  }
+}
