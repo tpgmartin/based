@@ -3,15 +3,13 @@
   "version": "0.0.1",
   "description": "Base 32 encoding",
   "main": "index.js",
-  "directories": {
+  "scripts": {
+    "clean": "rm -rf lib",
     "compile": "eslint . && babel -d lib/ src/",
     "hooks": "chmod +x hooks/*; cd .git/hooks && ln -sf ../../hooks/* . && exit 0",
     "prepublish": "npm run compile",
     "start": "npm run compile",
-    "test": "npm start && mocha --recursive --compilers js:babel-core/register"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run clean && npm start && mocha --recursive --compilers js:babel-core/register"
   },
   "repository": {
     "type": "git",
